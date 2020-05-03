@@ -8,6 +8,7 @@ import com.maddy.newsdemo.di.ApiComponent
 import com.maddy.newsdemo.model.BaseModel
 import com.maddy.newsdemo.model.NewsData
 import com.maddy.newsdemo.room.NewsDao
+import com.maddy.newsdemo.util.Constants
 import com.maddy.newsdemo.util.Utils
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -45,7 +46,7 @@ class NewsRepository {
         }
 
         val postListInfo: Call<BaseModel<ArrayList<NewsData>>> =
-            newsApi.getPaymentTypes("in", "c7e0c06c41744d8089d5a8b716502fef", 50)
+            newsApi.getPaymentTypes("in", Constants.NEWS_API_KEY, 50)
         postListInfo.enqueue(object : Callback<BaseModel<ArrayList<NewsData>>> {
             override fun onFailure(call: Call<BaseModel<ArrayList<NewsData>>>, t: Throwable) {
 //                val errorData = BaseModel("error", "error loading list", arrayListOf<NewsData>())
