@@ -16,7 +16,7 @@ interface NewsDao {
     fun insertNews(news: NewsData?):Long
 
     /* Method to fetch the movies stored locally */
-    @Query("SELECT * FROM `NewsData`")
+    @Query("SELECT * FROM `NewsData` order by `published_at` desc")
     fun getNews(): List<NewsData>
 
 }
