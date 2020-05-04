@@ -14,5 +14,4 @@ interface NewsApi {
     @GET("top-headlines")
     fun getPaymentTypes(@Query("country") country: String, @Query("apiKey") apiKey: String, @Query("pageSize") page: Int): Call<BaseModel<ArrayList<NewsData>>>
 
-//c7e0c06c41744d8089d5a8b716502fef
 }

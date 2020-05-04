@@ -15,8 +15,6 @@ import com.maddy.newsdemo.viewmodel.NewsViewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    private var newsAdapter: NewsListAdapter? = null
-
     override val layoutResourceId: Int
         get() = com.maddy.newsdemo.R.layout.activity_main;
 
