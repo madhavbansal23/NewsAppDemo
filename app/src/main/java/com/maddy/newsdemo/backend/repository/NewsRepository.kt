@@ -35,6 +35,7 @@ class NewsRepository {
 
     fun fetchNewsList(): MutableLiveData<BaseModel<ArrayList<NewsData>>> {
 
+        // Fetch offline news
         fetchNewsOffline()
 
         if (!Utils.isNetworkAvailable()) {
@@ -63,6 +64,7 @@ class NewsRepository {
                 response: Response<BaseModel<ArrayList<NewsData>>>
             ) {
                 if (response.code() == 200) {
+                    // Insert news in DB
                     insertNews(response.body()?.articles)
                     //newsListLiveData.postValue(response.body());
                 } else {
@@ -79,6 +81,7 @@ class NewsRepository {
         return newsListLiveData
     }
 
+    // Live data triggered when all records from DB loaded
     private fun fetchNewsOffline() {
         doAsync {
             val result = newsDao.getNews()

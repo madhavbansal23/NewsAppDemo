@@ -19,6 +19,7 @@ class DBModule(mApplication: Application) {
         return newsDB
     }
 
+
     @Singleton
     @Provides
     internal fun providesProductDao(newsDB: AppDB): NewsDao {

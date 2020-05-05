@@ -62,11 +62,13 @@ class ApiHelper {
             .build();
     }
 
+
     @Provides
     @Singleton
     internal fun getNewsApi(retroFit: Retrofit): NewsApi {
         return retroFit.create(NewsApi::class.java)
     }
+
 
     @Provides
     @Singleton

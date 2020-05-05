@@ -33,7 +33,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             setAdapter(newsData.articles);
         })
     }
-
+    // setting adapter
     private fun setAdapter(newsList: ArrayList<NewsData>) {
         binding.rvNews.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
@@ -45,6 +45,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 )
             )
 
+    // onclick adapter
             (adapter as NewsListAdapter).onItemClick = { url ->
                 val i: Intent = Intent(this@MainActivity, DetailActivity::class.java)
                 i.putExtra("url", url)
